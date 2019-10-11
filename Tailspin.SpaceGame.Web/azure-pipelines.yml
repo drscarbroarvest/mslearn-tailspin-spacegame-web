@@ -1,5 +1,6 @@
 stages:
 - stage: Build
+  displayName: 'Release'
   jobs:
     - job: 
       displayName: 'Hosted Build'
