@@ -1,17 +1,22 @@
+trigger:
+  branches:
+    include:
+      - '*'
+  paths:
+    exclude:
+      - docs/*
 stages:
-  - stage: 
+  - stage:
     jobs:
       - job:
         pool:
           vmImage: 'Ubuntu-16.04'
           demands:
           - npm
-
         variables:
           buildConfiguration: 'Release'
           wwwrootDir: 'Tailspin.SpaceGame.Web/wwwroot'
           dotnetSdkVersion: '2.1.505'
-
         steps:
         - task: DotNetCoreInstaller@0
           displayName: 'Use .NET Core SDK $(dotnetSdkVersion)'
@@ -33,6 +38,12 @@ stages:
           inputs:
             command: 'restore'
             projects: '**/*.csproj'
+        - template: templates/build.yml
+          parameters:
+            buildConfiguration: 'Release'
+        - template: templates/build.yml
+          parameters:
+            buildConfiguration: 'Debug'
         - task: DotNetCoreCLI@2
           displayName: 'Build the project - $(buildConfiguration)'
           inputs:
@@ -46,7 +57,7 @@ stages:
             projects: '**/*.csproj'
             publishWebProjects: false
             arguments: '--no-build --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
-            zipAfterPublish: true    
+            zipAfterPublish: true
         - task: PublishBuildArtifacts@1
           displayName: 'Publish Artifact: drop'
           condition: succeeded()
