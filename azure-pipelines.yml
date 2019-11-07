@@ -2,9 +2,6 @@ trigger:
   branches:
     include:
       - '*'
-  paths:
-    exclude:
-      - docs/*
 stages:
   - stage:
     jobs:
