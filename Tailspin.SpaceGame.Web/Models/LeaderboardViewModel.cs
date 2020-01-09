@@ -35,9 +35,25 @@ namespace TailSpin.SpaceGame.Web.Models
     /// </summary>
     public struct ScoreProfile
     {
+        private readonly Score _score;
+        private readonly Profile _profile;
+
+        public ScoreProfile(Score score, Profile profile)
+        {
+            _score = score;
+            _profile = profile;
+        }
+
         // The player's score.
-        public Score Score;
+        public Score Score
+        {
+            get => _score;
+        }
+
         // The player's profile.
-        public Profile Profile;
+        public Profile Profile
+        {
+            get => _profile;
+        }
     }
 }
