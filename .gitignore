@@ -1,8 +1,5 @@
 .DS_Store
-<<<<<<< HEAD
 CodeCoverage/
-=======
->>>>>>> master
 .sonarqube/
 
 ## Ignore Visual Studio temporary files, build results, and
