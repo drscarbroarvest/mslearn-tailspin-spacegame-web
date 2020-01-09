@@ -1,4 +1,5 @@
 .DS_Store
+CodeCoverage/
 .sonarqube/
 
 ## Ignore Visual Studio temporary files, build results, and
