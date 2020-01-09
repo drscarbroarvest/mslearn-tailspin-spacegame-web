@@ -101,11 +101,11 @@ namespace TailSpin.SpaceGame.Web.Controllers
                 Task<Profile>.WaitAll(profiles.ToArray());
 
                 // Combine each score with its profile.
-                vm.Scores = scores.Zip(profiles, (score, profile) => new ScoreProfile { Score = score, Profile = profile.Result });
+                vm.Scores = scores.Zip(profiles, (score, profile) => new ScoreProfile(score, profile.Result));
 
                 return View(vm);
             }
-            catch (Exception ex)
+            catch
             {
                 return View(vm);
             }
@@ -117,9 +117,9 @@ namespace TailSpin.SpaceGame.Web.Controllers
             try
             {
                 // Fetch the user profile with the given identifier.
-                return View(new ProfileViewModel { Profile = await _profileRespository.GetItemAsync(id), Rank = rank });
+                return View(new ProfileViewModel(await _profileRespository.GetItemAsync(id), rank));
             }
-            catch (Exception ex)
+            catch
             {
                 return RedirectToAction("/");
             }

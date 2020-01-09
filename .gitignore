@@ -1,5 +1,8 @@
 .DS_Store
+<<<<<<< HEAD
 CodeCoverage/
+=======
+>>>>>>> master
 .sonarqube/
 
 ## Ignore Visual Studio temporary files, build results, and
@@ -12,6 +15,7 @@ CodeCoverage/
 *.user
 *.userosscache
 *.sln.docstates
+CodeCoverage/
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -139,6 +143,8 @@ _TeamCity*
 # Visual Studio code coverage results
 *.coverage
 *.coveragexml
+
+[Cc]ode[Cc]overage/
 
 # NCrunch
 _NCrunch_*
@@ -332,3 +338,6 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+
+# SonarQube
+.sonarqube/

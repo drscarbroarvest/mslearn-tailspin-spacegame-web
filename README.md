@@ -1,3 +1,4 @@
+[![Build Status](https://dev.azure.com/dscarbrough/Basic/_apis/build/status/drscarbroarvest.mslearn-tailspin-spacegame-web?branchName=master)](https://dev.azure.com/dscarbrough/Basic/_build/latest?definitionId=10&branchName=master)
 
 # Contributing
 

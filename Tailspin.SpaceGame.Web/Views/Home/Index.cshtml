@@ -30,7 +30,7 @@
 <!-- Leaderboard -->
 <section class="leaderboard">
     <div class="container">
-        <a name="leaderboard"></a>
+        <a id="leaderboard"></a>
         <h2>Space leaders</h2>
         <!-- Start Leaderboard table -->
         <div class="row">
@@ -68,7 +68,7 @@
                             </div>
                             <div class="col-sm-4 score-data">
                                 <div style="text-align: left; margin-left: 100px;">
-                                    <partial name="Profile" model="new ProfileViewModel { Profile = score.Profile, Rank = (rank - 1).ToString() }" />
+                                    <partial name="Profile" model="new ProfileViewModel(score.Profile, (rank - 1).ToString());" />
                                     <a href="" data-toggle="modal" data-target="#profile-modal-@((rank - 1).ToString())">
                                         <img class="avatar" src="@score.Profile.AvatarUrl" alt="@score.Profile.UserName">
                                         <div class="score-data username">
