@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <PackageReference Include="Tailspin.SpaceGame.Web.Models" Version="1.0.0-CI-20200109-213857" />
+  
   <ItemGroup>
     <Content Remove="SampleData\profiles.json" />
     <Content Remove="SampleData\scores.json" />

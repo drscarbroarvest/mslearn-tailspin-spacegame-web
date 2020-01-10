@@ -16,6 +16,8 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.8.0" />
   </ItemGroup>
 
+  <PackageReference Include="Tailspin.SpaceGame.Web.Models" Version="1.0.0-CI-20200109-213857" />
+  
   <ItemGroup>
     <ProjectReference Include="..\Tailspin.SpaceGame.Web\Tailspin.SpaceGame.Web.csproj" />
   </ItemGroup>
